@@ -3,15 +3,12 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/global_component/background_card/background_card_widget.dart';
 import '/global_component/no_data_with_lottie/no_data_with_lottie_widget.dart';
 import '/global_component/user_info_grid/user_info_grid_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'home_friends_model.dart';
 export 'home_friends_model.dart';
 
@@ -71,7 +68,7 @@ class _HomeFriendsWidgetState extends State<HomeFriendsWidget> {
                 actions: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                     child: FlutterFlowIconButton(
                       borderRadius: 8.0,
                       buttonSize: 40.0,
@@ -85,7 +82,7 @@ class _HomeFriendsWidgetState extends State<HomeFriendsWidget> {
                         context.pushNamed(
                           'UserSearch',
                           extra: <String, dynamic>{
-                            kTransitionInfoKey: TransitionInfo(
+                            kTransitionInfoKey: const TransitionInfo(
                               hasTransition: true,
                               transitionType: PageTransitionType.rightToLeft,
                             ),
@@ -104,7 +101,7 @@ class _HomeFriendsWidgetState extends State<HomeFriendsWidget> {
             wrapWithModel(
               model: _model.backgroundCardModel,
               updateCallback: () => safeSetState(() {}),
-              child: BackgroundCardWidget(),
+              child: const BackgroundCardWidget(),
             ),
             StreamBuilder<List<FriendsRecord>>(
               stream: queryFriendsRecord(
@@ -131,10 +128,10 @@ class _HomeFriendsWidgetState extends State<HomeFriendsWidget> {
                 List<FriendsRecord> containerFriendsRecordList = snapshot.data!;
 
                 return Container(
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                   child: Builder(
                     builder: (context) {
-                      if (containerFriendsRecordList.length > 0) {
+                      if (containerFriendsRecordList.isNotEmpty) {
                         return Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               valueOrDefault<double>(
@@ -153,7 +150,7 @@ class _HomeFriendsWidgetState extends State<HomeFriendsWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 8.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -178,7 +175,7 @@ class _HomeFriendsWidgetState extends State<HomeFriendsWidget> {
                                     return GridView.builder(
                                       padding: EdgeInsets.zero,
                                       gridDelegate:
-                                          SliverGridDelegateWithFixedCrossAxisCount(
+                                          const SliverGridDelegateWithFixedCrossAxisCount(
                                         crossAxisCount: 3,
                                         crossAxisSpacing: 4.0,
                                         mainAxisSpacing: 0.0,
@@ -205,11 +202,9 @@ class _HomeFriendsWidgetState extends State<HomeFriendsWidget> {
                               ),
                               if (functions
                                       .removeFirst3Friends(
-                                          containerFriendsRecordList.toList())
-                                      .length >
-                                  0)
+                                          containerFriendsRecordList.toList()).isNotEmpty)
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 16.0, 0.0, 8.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -304,7 +299,7 @@ class _HomeFriendsWidgetState extends State<HomeFriendsWidget> {
                                                     .secondaryBackground,
                                             dense: false,
                                             contentPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 12.0, 0.0),
                                             shape: RoundedRectangleBorder(
                                               borderRadius:
@@ -322,11 +317,11 @@ class _HomeFriendsWidgetState extends State<HomeFriendsWidget> {
                         );
                       } else {
                         return Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: wrapWithModel(
                             model: _model.noDataWithLottieModel,
                             updateCallback: () => safeSetState(() {}),
-                            child: NoDataWithLottieWidget(
+                            child: const NoDataWithLottieWidget(
                               message:
                                   '\n\nNo friends,\n\nPlease add friend to grow together.',
                             ),

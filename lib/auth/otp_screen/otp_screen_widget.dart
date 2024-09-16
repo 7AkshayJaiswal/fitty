@@ -7,8 +7,6 @@ import '/global_component/background_card/background_card_widget.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'otp_screen_model.dart';
 export 'otp_screen_model.dart';
 
@@ -56,7 +54,7 @@ class _OtpScreenWidgetState extends State<OtpScreenWidget> {
             wrapWithModel(
               model: _model.backgroundCardModel,
               updateCallback: () => safeSetState(() {}),
-              child: BackgroundCardWidget(),
+              child: const BackgroundCardWidget(),
             ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(
@@ -86,7 +84,7 @@ class _OtpScreenWidgetState extends State<OtpScreenWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 16.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 16.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -103,11 +101,11 @@ class _OtpScreenWidgetState extends State<OtpScreenWidget> {
                               text: FFLocalizations.of(context).getText(
                                 'zdrqfmka' /* OTP sent to  */,
                               ),
-                              style: TextStyle(),
+                              style: const TextStyle(),
                             ),
                             TextSpan(
-                              text: widget!.mobileNumber!,
-                              style: TextStyle(
+                              text: widget.mobileNumber!,
+                              style: const TextStyle(
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
@@ -115,7 +113,7 @@ class _OtpScreenWidgetState extends State<OtpScreenWidget> {
                               text: FFLocalizations.of(context).getText(
                                 '71e1lqwy' /*   */,
                               ),
-                              style: TextStyle(),
+                              style: const TextStyle(),
                             ),
                             TextSpan(
                               text: FFLocalizations.of(context).getText(
@@ -160,7 +158,7 @@ class _OtpScreenWidgetState extends State<OtpScreenWidget> {
                       fieldHeight: 44.0,
                       fieldWidth: 44.0,
                       borderWidth: 2.0,
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                         bottomLeft: Radius.circular(12.0),
                         bottomRight: Radius.circular(12.0),
                         topLeft: Radius.circular(12.0),
@@ -179,14 +177,14 @@ class _OtpScreenWidgetState extends State<OtpScreenWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         GoRouter.of(context).prepareAuthEvent();
                         final smsCodeVal = _model.pinCodeController!.text;
-                        if (smsCodeVal == null || smsCodeVal.isEmpty) {
+                        if (smsCodeVal.isEmpty) {
                           ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
+                            const SnackBar(
                               content: Text('Enter SMS verification code.'),
                             ),
                           );
@@ -207,7 +205,7 @@ class _OtpScreenWidgetState extends State<OtpScreenWidget> {
                             'Home-Fit',
                             context.mounted,
                             extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
+                              kTransitionInfoKey: const TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.leftToRight,
                               ),
@@ -224,10 +222,10 @@ class _OtpScreenWidgetState extends State<OtpScreenWidget> {
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 40.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 6.0, 24.0, 6.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).bodyMedium.override(
@@ -237,7 +235,7 @@ class _OtpScreenWidgetState extends State<OtpScreenWidget> {
                                   letterSpacing: 0.0,
                                 ),
                         elevation: 0.5,
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           width: 0.0,
                         ),
                         borderRadius: BorderRadius.circular(6.0),
@@ -250,7 +248,7 @@ class _OtpScreenWidgetState extends State<OtpScreenWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: RichText(
                       textScaler: MediaQuery.of(context).textScaler,
                       text: TextSpan(
@@ -357,7 +355,7 @@ class _OtpScreenWidgetState extends State<OtpScreenWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               child: FlutterFlowIconButton(
                 borderRadius: 30.0,
                 borderWidth: 0.0,

@@ -5,8 +5,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/global_component/background_card/background_card_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'login_screen_model.dart';
 export 'login_screen_model.dart';
 
@@ -53,7 +51,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
             wrapWithModel(
               model: _model.backgroundCardModel,
               updateCallback: () => safeSetState(() {}),
-              child: BackgroundCardWidget(),
+              child: const BackgroundCardWidget(),
             ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(
@@ -90,7 +88,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                         ),
                         0.0,
                         0.0),
-                    child: Container(
+                    child: SizedBox(
                       width: double.infinity,
                       child: TextFormField(
                         controller: _model.textController,
@@ -171,16 +169,15 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         final phoneNumberVal =
                             '+91${_model.textController.text}';
-                        if (phoneNumberVal == null ||
-                            phoneNumberVal.isEmpty ||
+                        if (phoneNumberVal.isEmpty ||
                             !phoneNumberVal.startsWith('+')) {
                           ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
+                            const SnackBar(
                               content: Text(
                                   'Phone Number is required and has to start with +.'),
                             ),
@@ -211,10 +208,10 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 40.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 6.0, 24.0, 6.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).bodyMedium.override(
@@ -224,7 +221,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                                   letterSpacing: 0.0,
                                 ),
                         elevation: 0.5,
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           width: 0.0,
                         ),
                         borderRadius: BorderRadius.circular(6.0),
@@ -237,7 +234,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: RichText(
                       textScaler: MediaQuery.of(context).textScaler,
                       text: TextSpan(
