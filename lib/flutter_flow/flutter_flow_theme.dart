@@ -260,7 +260,7 @@ class ThemeTypography extends Typography {
   String get bodySmallFamily => 'Roboto';
   TextStyle get bodySmall => GoogleFonts.getFont(
         'Roboto',
-        color: Color(0xFFAEBFC1),
+        color: const Color(0xFFAEBFC1),
         fontWeight: FontWeight.w200,
         fontSize: 12.0,
       );

@@ -1,16 +1,11 @@
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/global_component/background_card/background_card_widget.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'home_my_day_model.dart';
 export 'home_my_day_model.dart';
 
@@ -79,10 +74,10 @@ class _HomeMyDayWidgetState extends State<HomeMyDayWidget> {
                 ),
                 actions: [
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                       child: FlutterFlowIconButton(
                         borderRadius: 8.0,
                         buttonSize: 40.0,
@@ -108,7 +103,7 @@ class _HomeMyDayWidgetState extends State<HomeMyDayWidget> {
             wrapWithModel(
               model: _model.backgroundCardModel,
               updateCallback: () => safeSetState(() {}),
-              child: BackgroundCardWidget(),
+              child: const BackgroundCardWidget(),
             ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(
@@ -129,7 +124,7 @@ class _HomeMyDayWidgetState extends State<HomeMyDayWidget> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'hjt6mnk2' /* My Day */,
@@ -151,21 +146,21 @@ class _HomeMyDayWidgetState extends State<HomeMyDayWidget> {
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Color(0x30E5E6EA),
+                          color: const Color(0x30E5E6EA),
                           borderRadius: BorderRadius.circular(16.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 36.0, 0.0, 36.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Text(
                                   valueOrDefault<String>(
-                                    _model.stepCount?.steps?.toString(),
+                                    _model.stepCount?.steps.toString(),
                                     '1407',
                                   ),
                                   style: FlutterFlowTheme.of(context)
@@ -178,7 +173,7 @@ class _HomeMyDayWidgetState extends State<HomeMyDayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 0.0),
                                 child: RichText(
                                   textScaler: MediaQuery.of(context).textScaler,
