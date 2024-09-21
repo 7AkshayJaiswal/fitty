@@ -1,20 +1,6 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /friends/{document} {
-      allow create: if true;
-      allow read: if true;
-      allow write: if false;
-      allow delete: if false;
-    }
-
-    match /friendRequests/{document} {
-      allow create: if true;
-      allow read: if true;
-      allow write: if false;
-      allow delete: if false;
-    }
-
     match /blockedUsers/{document} {
       allow create: if true;
       allow read: if true;
@@ -53,22 +39,22 @@ service cloud.firestore {
     match /usersDailyCount/{document} {
       allow create: if true;
       allow read: if true;
-      allow write: if true;
-      allow delete: if true;
+      allow write: if false;
+      allow delete: if false;
     }
 
     match /walkRooms/{document} {
       allow create: if true;
       allow read: if true;
-      allow write: if true;
-      allow delete: if true;
+      allow write: if false;
+      allow delete: if false;
     }
 
     match /walkRooms/{parent}/userBasedStepCount/{document} {
       allow create: if true;
       allow read: if true;
-      allow write: if true;
-      allow delete: if true;
+      allow write: if false;
+      allow delete: if false;
     }
 
     match /{path=**}/userBasedStepCount/{document} {
@@ -76,16 +62,11 @@ service cloud.firestore {
     }
 
 
-    match /walkRooms/{parent}/coHost/{document} {
+    match /challenge/{document} {
       allow create: if true;
       allow read: if true;
-      allow write: if true;
-      allow delete: if true;
+      allow write: if false;
+      allow delete: if false;
     }
-
-    match /{path=**}/coHost/{document} {
-      allow read: if true;
-    }
-
   }
 }

@@ -17,6 +17,7 @@ import 'schema/users_daily_count_record.dart';
 import 'schema/walk_rooms_record.dart';
 import 'schema/user_based_step_count_record.dart';
 import 'schema/co_host_record.dart';
+import 'schema/challenge_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -37,6 +38,7 @@ export 'schema/users_daily_count_record.dart';
 export 'schema/walk_rooms_record.dart';
 export 'schema/user_based_step_count_record.dart';
 export 'schema/co_host_record.dart';
+export 'schema/challenge_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -488,6 +490,43 @@ Future<List<CoHostRecord>> queryCoHostRecordOnce({
       singleRecord: singleRecord,
     );
 
+/// Functions to query ChallengeRecords (as a Stream and as a Future).
+Future<int> queryChallengeRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      ChallengeRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<ChallengeRecord>> queryChallengeRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      ChallengeRecord.collection,
+      ChallengeRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<ChallengeRecord>> queryChallengeRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      ChallengeRecord.collection,
+      ChallengeRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
 Future<int> queryCollectionCount(
   Query collection, {
   Query Function(Query)? queryBuilder,
@@ -607,7 +646,7 @@ Future<FFFirestorePage<T>> queryCollectionPage<T>(
   } else {
     docSnapshot = await query.get();
   }
-  getDocs(QuerySnapshot s) => s.docs
+  final getDocs = (QuerySnapshot s) => s.docs
       .map(
         (d) => safeGet(
           () => recordBuilder(d),

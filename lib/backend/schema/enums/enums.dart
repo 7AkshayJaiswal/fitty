@@ -18,6 +18,11 @@ enum MessageType {
   image,
 }
 
+enum PrivacyType {
+  Public,
+  Private,
+}
+
 extension FFEnumExtensions<T extends Enum> on T {
   String serialize() => name;
 }
@@ -35,6 +40,8 @@ T? deserializeEnum<T>(String? value) {
       return FriendShipStatus.values.deserialize(value) as T?;
     case (MessageType):
       return MessageType.values.deserialize(value) as T?;
+    case (PrivacyType):
+      return PrivacyType.values.deserialize(value) as T?;
     default:
       return null;
   }

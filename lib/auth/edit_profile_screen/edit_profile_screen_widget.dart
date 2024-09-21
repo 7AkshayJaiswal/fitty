@@ -11,7 +11,11 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import '/global_component/background_card/background_card_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'edit_profile_screen_model.dart';
 export 'edit_profile_screen_model.dart';
 
@@ -79,7 +83,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                       borderRadius: 30.0,
                       borderWidth: 1.0,
                       buttonSize: 60.0,
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.chevron_left_rounded,
                         color: Colors.white,
                         size: 30.0,
@@ -95,12 +99,12 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                     'dfjpzl89' /* Profile */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineSmall.override(
-                        fontFamily: 'Roboto',
+                        fontFamily: 'Urbanist',
                         fontSize: 22.0,
                         letterSpacing: 0.0,
                       ),
                 ),
-                actions: const [],
+                actions: [],
                 centerTitle: true,
                 elevation: 0.0,
               )
@@ -110,7 +114,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
             wrapWithModel(
               model: _model.backgroundCardModel,
               updateCallback: () => safeSetState(() {}),
-              child: const BackgroundCardWidget(),
+              child: BackgroundCardWidget(),
             ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(
@@ -136,7 +140,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -149,7 +153,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                               GoRouter.of(context).clearRedirectLocation();
 
                               context.goNamedAuth(
-                                  'WelcomeScreen', context.mounted);
+                                  'LoginScreen', context.mounted);
                             },
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -158,7 +162,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Roboto',
+                                    fontFamily: 'Urbanist',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -169,7 +173,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -189,20 +193,20 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsets.all(2.0),
+                                      padding: EdgeInsets.all(2.0),
                                       child: AuthUserStreamWidget(
                                         builder: (context) => Container(
                                           width: 90.0,
                                           height: 90.0,
                                           clipBehavior: Clip.antiAlias,
-                                          decoration: const BoxDecoration(
+                                          decoration: BoxDecoration(
                                             shape: BoxShape.circle,
                                           ),
                                           child: CachedNetworkImage(
                                             fadeInDuration:
-                                                const Duration(milliseconds: 500),
+                                                Duration(milliseconds: 500),
                                             fadeOutDuration:
-                                                const Duration(milliseconds: 500),
+                                                Duration(milliseconds: 500),
                                             imageUrl: currentUserPhoto,
                                             fit: BoxFit.fitWidth,
                                           ),
@@ -274,17 +278,17 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                     ),
                                     options: FFButtonOptions(
                                       height: 44.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 6.0, 24.0, 6.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Roboto',
+                                            fontFamily: 'Urbanist',
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             fontSize: 12.0,
@@ -299,11 +303,11 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                       borderRadius: BorderRadius.circular(6.0),
                                     ),
                                   ),
-                                ].divide(const SizedBox(width: 16.0)),
+                                ].divide(SizedBox(width: 16.0)),
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 24.0, 0.0, 0.0),
                               child: TextFormField(
                                 controller: _model.yourNameTextController,
@@ -315,7 +319,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Urbanist',
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
                                         letterSpacing: 0.0,
@@ -326,7 +330,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Urbanist',
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
                                         letterSpacing: 0.0,
@@ -365,7 +369,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                   contentPadding:
-                                      const EdgeInsetsDirectional.fromSTEB(
+                                      EdgeInsetsDirectional.fromSTEB(
                                           24.0, 16.0, 24.0, 16.0),
                                   hoverColor:
                                       FlutterFlowTheme.of(context).secondary,
@@ -375,7 +379,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                     .override(
                                       fontFamily: 'Capriola',
                                       color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                          .primaryText,
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
                                     ),
@@ -387,7 +391,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 8.0, 0.0, 0.0),
                               child: TextFormField(
                                 controller: _model.yourEmailTextController,
@@ -399,7 +403,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Urbanist',
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
                                         letterSpacing: 0.0,
@@ -410,7 +414,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Urbanist',
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
                                         letterSpacing: 0.0,
@@ -449,7 +453,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                   contentPadding:
-                                      const EdgeInsetsDirectional.fromSTEB(
+                                      EdgeInsetsDirectional.fromSTEB(
                                           24.0, 16.0, 24.0, 16.0),
                                   hoverColor:
                                       FlutterFlowTheme.of(context).secondary,
@@ -459,7 +463,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                     .override(
                                       fontFamily: 'Capriola',
                                       color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                          .primaryText,
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
                                     ),
@@ -471,7 +475,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 8.0, 0.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -479,7 +483,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  final datePickedDate = await showDatePicker(
+                                  final _datePickedDate = await showDatePicker(
                                     context: context,
                                     initialDate: getCurrentTimestamp,
                                     firstDate: DateTime(1900),
@@ -497,7 +501,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                             FlutterFlowTheme.of(context)
                                                 .headlineLarge
                                                 .override(
-                                                  fontFamily: 'Roboto',
+                                                  fontFamily: 'Urbanist',
                                                   fontSize: 32.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
@@ -521,12 +525,12 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                     },
                                   );
 
-                                  if (datePickedDate != null) {
+                                  if (_datePickedDate != null) {
                                     safeSetState(() {
                                       _model.datePicked = DateTime(
-                                        datePickedDate.year,
-                                        datePickedDate.month,
-                                        datePickedDate.day,
+                                        _datePickedDate.year,
+                                        _datePickedDate.month,
+                                        _datePickedDate.day,
                                       );
                                     });
                                   }
@@ -553,7 +557,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -565,7 +569,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
-                                                  fontFamily: 'Roboto',
+                                                  fontFamily: 'Urbanist',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
@@ -582,7 +586,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 8.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -596,7 +600,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Roboto',
+                                          fontFamily: 'Urbanist',
                                           color: FlutterFlowTheme.of(context)
                                               .accent1,
                                           letterSpacing: 0.0,
@@ -622,14 +626,14 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Roboto',
+                                          fontFamily: 'Urbanist',
                                           letterSpacing: 0.0,
                                         ),
                                     selectedTextStyle:
                                         FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Roboto',
+                                              fontFamily: 'Urbanist',
                                               letterSpacing: 0.0,
                                             ),
                                     buttonPosition: RadioButtonPosition.left,
@@ -655,18 +659,18 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 8.0, 0.0, 12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Expanded(
                                     child: Container(
-                                      decoration: const BoxDecoration(),
+                                      decoration: BoxDecoration(),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 6.0, 0.0),
-                                        child: SizedBox(
+                                        child: Container(
                                           width: 200.0,
                                           child: TextFormField(
                                             controller: _model.textController3,
@@ -680,7 +684,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Roboto',
+                                                        fontFamily: 'Urbanist',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -696,7 +700,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Roboto',
+                                                        fontFamily: 'Urbanist',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -749,7 +753,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                               contentPadding:
-                                                  const EdgeInsetsDirectional
+                                                  EdgeInsetsDirectional
                                                       .fromSTEB(24.0, 16.0,
                                                           24.0, 16.0),
                                               hoverColor:
@@ -762,7 +766,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                                   fontFamily: 'Capriola',
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
+                                                      .primaryText,
                                                   fontSize: 12.0,
                                                   letterSpacing: 0.0,
                                                 ),
@@ -779,11 +783,11 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                   ),
                                   Expanded(
                                     child: Container(
-                                      decoration: const BoxDecoration(),
+                                      decoration: BoxDecoration(),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             6.0, 0.0, 0.0, 0.0),
-                                        child: SizedBox(
+                                        child: Container(
                                           width: 200.0,
                                           child: TextFormField(
                                             controller: _model.textController4,
@@ -797,7 +801,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Roboto',
+                                                        fontFamily: 'Urbanist',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -813,7 +817,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Roboto',
+                                                        fontFamily: 'Urbanist',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -866,7 +870,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                               contentPadding:
-                                                  const EdgeInsetsDirectional
+                                                  EdgeInsetsDirectional
                                                       .fromSTEB(24.0, 16.0,
                                                           24.0, 16.0),
                                               hoverColor:
@@ -879,7 +883,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                                   fontFamily: 'Capriola',
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
+                                                      .primaryText,
                                                   fontSize: 12.0,
                                                   letterSpacing: 0.0,
                                                 ),
@@ -925,7 +929,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                 if (valueOrDefault<bool>(
                                     currentUserDocument?.profileDone, false))
                                   Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.05),
+                                    alignment: AlignmentDirectional(0.0, 0.05),
                                     child: FFButtonWidget(
                                       onPressed: () async {
                                         Navigator.pop(context);
@@ -935,17 +939,17 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                       ),
                                       options: FFButtonOptions(
                                         height: 44.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             24.0, 6.0, 24.0, 6.0),
                                         iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Roboto',
+                                              fontFamily: 'Urbanist',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
@@ -964,7 +968,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                     ),
                                   ),
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.05),
+                                  alignment: AlignmentDirectional(0.0, 0.05),
                                   child: FFButtonWidget(
                                     onPressed: () async {
                                       if (_model.formKey.currentState == null ||
@@ -985,7 +989,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                               ),
                                             ),
                                             duration:
-                                                const Duration(milliseconds: 4000),
+                                                Duration(milliseconds: 4000),
                                             backgroundColor:
                                                 FlutterFlowTheme.of(context)
                                                     .secondary,
@@ -1030,13 +1034,13 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Roboto',
+                                                  fontFamily: 'Urbanist',
                                                   color: Colors.white,
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
                                           duration:
-                                              const Duration(milliseconds: 4000),
+                                              Duration(milliseconds: 4000),
                                           backgroundColor:
                                               FlutterFlowTheme.of(context)
                                                   .secondary,
@@ -1054,24 +1058,24 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                           : (MediaQuery.sizeOf(context).width *
                                               0.9),
                                       height: 44.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 6.0, 24.0, 6.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Roboto',
+                                            fontFamily: 'Urbanist',
                                             color: FlutterFlowTheme.of(context)
                                                 .secondary,
                                             fontSize: 12.0,
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 0.5,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         width: 0.0,
                                       ),
                                       borderRadius: BorderRadius.circular(6.0),

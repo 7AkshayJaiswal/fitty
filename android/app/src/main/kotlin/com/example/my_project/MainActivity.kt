@@ -1,4 +1,4 @@
-package com.fitty
+package com.gumm.app
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,11 +1,19 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/schema/enums/enums.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'view_requests_model.dart';
 export 'view_requests_model.dart';
 
@@ -72,11 +80,11 @@ class _ViewRequestsWidgetState extends State<ViewRequestsWidget>
                     'r433s7mj' /* Friend Requests */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineSmall.override(
-                        fontFamily: 'Roboto',
+                        fontFamily: 'Urbanist',
                         letterSpacing: 0.0,
                       ),
                 ),
-                actions: const [],
+                actions: [],
                 centerTitle: false,
                 elevation: 0.0,
               )
@@ -93,13 +101,13 @@ class _ViewRequestsWidgetState extends State<ViewRequestsWidget>
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'b901u6x2' /* Recent search... */,
                       ),
                       style: FlutterFlowTheme.of(context).labelMedium.override(
-                            fontFamily: 'Roboto',
+                            fontFamily: 'Urbanist',
                             letterSpacing: 0.0,
                           ),
                     ),
@@ -108,7 +116,7 @@ class _ViewRequestsWidgetState extends State<ViewRequestsWidget>
               ),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 0.0),
                   child: StreamBuilder<List<FriendRequestsRecord>>(
                     stream: queryFriendRequestsRecord(
                       queryBuilder: (friendRequestsRecord) =>
@@ -151,7 +159,7 @@ class _ViewRequestsWidgetState extends State<ViewRequestsWidget>
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 1.0),
                                 child: StreamBuilder<UsersRecord>(
                                   stream: UsersRecord.getDocument(
@@ -185,7 +193,7 @@ class _ViewRequestsWidgetState extends State<ViewRequestsWidget>
                                             blurRadius: 0.0,
                                             color: FlutterFlowTheme.of(context)
                                                 .alternate,
-                                            offset: const Offset(
+                                            offset: Offset(
                                               0.0,
                                               1.0,
                                             ),
@@ -193,7 +201,7 @@ class _ViewRequestsWidgetState extends State<ViewRequestsWidget>
                                         ],
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
+                                        padding: EdgeInsets.all(8.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -209,7 +217,7 @@ class _ViewRequestsWidgetState extends State<ViewRequestsWidget>
                                             ),
                                             Expanded(
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 0.0, 0.0),
                                                 child: Column(
@@ -220,7 +228,7 @@ class _ViewRequestsWidgetState extends State<ViewRequestsWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -235,7 +243,7 @@ class _ViewRequestsWidgetState extends State<ViewRequestsWidget>
                                                                 .bodyLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Roboto',
+                                                                      'Urbanist',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -257,7 +265,7 @@ class _ViewRequestsWidgetState extends State<ViewRequestsWidget>
                                                               .bodySmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Roboto',
+                                                                    'Urbanist',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .tertiary,
@@ -277,7 +285,7 @@ class _ViewRequestsWidgetState extends State<ViewRequestsWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 6.0, 0.0),
                                                     child:

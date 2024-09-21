@@ -1,16 +1,22 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
+import '/backend/schema/enums/enums.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
 import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/lat_lng.dart';
+import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -75,28 +81,28 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const NavBarPage() : const WelcomeScreenWidget(),
+          appStateNotifier.loggedIn ? NavBarPage() : LoginScreenWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const NavBarPage() : const WelcomeScreenWidget(),
+              appStateNotifier.loggedIn ? NavBarPage() : LoginScreenWidget(),
         ),
         FFRoute(
           name: 'WelcomeScreen',
           path: '/welcomeScreen',
-          builder: (context, params) => const WelcomeScreenWidget(),
+          builder: (context, params) => WelcomeScreenWidget(),
         ),
         FFRoute(
           name: 'OnBoardingScreen',
           path: '/onBoardingScreen',
-          builder: (context, params) => const OnBoardingScreenWidget(),
+          builder: (context, params) => OnBoardingScreenWidget(),
         ),
         FFRoute(
           name: 'LoginScreen',
           path: '/loginScreen',
-          builder: (context, params) => const LoginScreenWidget(),
+          builder: (context, params) => LoginScreenWidget(),
         ),
         FFRoute(
           name: 'OtpScreen',
@@ -111,43 +117,48 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'Home-Fit',
           path: '/homeFit',
+          requireAuth: true,
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'Home-Fit')
-              : const HomeFitWidget(),
+              ? NavBarPage(initialPage: 'Home-Fit')
+              : HomeFitWidget(),
         ),
         FFRoute(
           name: 'Home-MyDay',
           path: '/homeMyDay',
+          requireAuth: true,
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'Home-MyDay')
-              : const HomeMyDayWidget(),
+              ? NavBarPage(initialPage: 'Home-MyDay')
+              : HomeMyDayWidget(),
         ),
         FFRoute(
           name: 'Home-Friends',
           path: '/homeFriends',
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'Home-Friends')
-              : const HomeFriendsWidget(),
+          requireAuth: true,
+          builder: (context, params) => HomeFriendsWidget(),
         ),
         FFRoute(
           name: 'ProfileScreen',
           path: '/profileScreen',
-          builder: (context, params) => const ProfileScreenWidget(),
+          requireAuth: true,
+          builder: (context, params) => ProfileScreenWidget(),
         ),
         FFRoute(
           name: 'EditProfileScreen',
           path: '/editProfileScreen',
-          builder: (context, params) => const EditProfileScreenWidget(),
+          requireAuth: true,
+          builder: (context, params) => EditProfileScreenWidget(),
         ),
         FFRoute(
           name: 'UserSearch',
           path: '/userSearch',
-          builder: (context, params) => const UserSearchWidget(),
+          requireAuth: true,
+          builder: (context, params) => UserSearchWidget(),
         ),
         FFRoute(
           name: 'ViewRequests',
           path: '/viewRequests',
-          builder: (context, params) => const ViewRequestsWidget(),
+          requireAuth: true,
+          builder: (context, params) => ViewRequestsWidget(),
         ),
         FFRoute(
           name: 'Room',
@@ -159,6 +170,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.String,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'CreateWalkRoomScreen',
+          path: '/createWalkRoomScreen',
+          requireAuth: true,
+          builder: (context, params) => CreateWalkRoomScreenWidget(),
+        ),
+        FFRoute(
+          name: 'HomeViswa',
+          path: '/homeViswa',
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'HomeViswa')
+              : HomeViswaWidget(),
+        ),
+        FFRoute(
+          name: 'Viswa_onboarding',
+          path: '/viswaOnboarding',
+          builder: (context, params) => ViswaOnboardingWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -332,7 +361,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/welcomeScreen';
+            return '/loginScreen';
           }
           return null;
         },
@@ -349,8 +378,8 @@ class FFRoute {
               ? Container(
                   color: FlutterFlowTheme.of(context).primary,
                   child: Image.asset(
-                    'assets/images/logo.png',
-                    fit: BoxFit.fitWidth,
+                    'assets/images/playstore-icon.png',
+                    fit: BoxFit.contain,
                   ),
                 )
               : page;
@@ -395,7 +424,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

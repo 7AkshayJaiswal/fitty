@@ -1,7 +1,10 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'user_info_grid_model.dart';
 export 'user_info_grid_model.dart';
 
@@ -44,7 +47,7 @@ class _UserInfoGridWidgetState extends State<UserInfoGridWidget> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<UsersRecord>(
-      future: UsersRecord.getDocumentOnce(widget.user!),
+      future: UsersRecord.getDocumentOnce(widget!.user!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -66,7 +69,7 @@ class _UserInfoGridWidgetState extends State<UserInfoGridWidget> {
         return Container(
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
-            boxShadow: const [
+            boxShadow: [
               BoxShadow(
                 blurRadius: 4.0,
                 color: Color(0x34090F13),
@@ -79,7 +82,7 @@ class _UserInfoGridWidgetState extends State<UserInfoGridWidget> {
             borderRadius: BorderRadius.circular(8.0),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding: EdgeInsets.all(12.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -94,11 +97,11 @@ class _UserInfoGridWidgetState extends State<UserInfoGridWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                   child: Text(
                     containerUsersRecord.displayName,
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Roboto',
+                          fontFamily: 'Urbanist',
                           letterSpacing: 0.0,
                         ),
                   ),

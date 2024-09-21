@@ -5,6 +5,8 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/global_component/background_card/background_card_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'login_screen_model.dart';
 export 'login_screen_model.dart';
 
@@ -51,7 +53,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
             wrapWithModel(
               model: _model.backgroundCardModel,
               updateCallback: () => safeSetState(() {}),
-              child: const BackgroundCardWidget(),
+              child: BackgroundCardWidget(),
             ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(
@@ -72,11 +74,13 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                 children: [
                   Text(
                     FFLocalizations.of(context).getText(
-                      'a922furx' /* Fitty */,
+                      'a922furx' /* gumm */,
                     ),
                     style: FlutterFlowTheme.of(context).displayMedium.override(
-                          fontFamily: 'Roboto',
+                          fontFamily: 'Urbanist',
+                          color: FlutterFlowTheme.of(context).primary,
                           letterSpacing: 0.0,
+                          fontStyle: FontStyle.italic,
                         ),
                   ),
                   Padding(
@@ -88,7 +92,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                         ),
                         0.0,
                         0.0),
-                    child: SizedBox(
+                    child: Container(
                       width: double.infinity,
                       child: TextFormField(
                         controller: _model.textController,
@@ -100,7 +104,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                           labelStyle: FlutterFlowTheme.of(context)
                               .labelMedium
                               .override(
-                                fontFamily: 'Roboto',
+                                fontFamily: 'Urbanist',
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 letterSpacing: 1.0,
                               ),
@@ -110,7 +114,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                           hintStyle: FlutterFlowTheme.of(context)
                               .labelMedium
                               .override(
-                                fontFamily: 'Roboto',
+                                fontFamily: 'Urbanist',
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 letterSpacing: 0.0,
@@ -150,10 +154,10 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Capriola',
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                              color: FlutterFlowTheme.of(context).primaryText,
                               fontSize: 12.0,
                               letterSpacing: 0.0,
+                              lineHeight: 3.0,
                             ),
                         maxLength: 10,
                         buildCounter: (context,
@@ -167,64 +171,69 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
-                    child: FFButtonWidget(
-                      onPressed: () async {
-                        final phoneNumberVal =
-                            '+91${_model.textController.text}';
-                        if (phoneNumberVal.isEmpty ||
-                            !phoneNumberVal.startsWith('+')) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text(
-                                  'Phone Number is required and has to start with +.'),
-                            ),
-                          );
-                          return;
-                        }
-                        await authManager.beginPhoneAuth(
-                          context: context,
-                          phoneNumber: phoneNumberVal,
-                          onCodeSent: (context) async {
-                            context.goNamedAuth(
-                              'OtpScreen',
-                              context.mounted,
-                              queryParameters: {
-                                'mobileNumber': serializeParam(
-                                  '+91${_model.textController.text}',
-                                  ParamType.String,
-                                ),
-                              }.withoutNulls,
-                              ignoreRedirect: true,
+                  Align(
+                    alignment: AlignmentDirectional(0.0, 0.0),
+                    child: Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          final phoneNumberVal =
+                              '+91${_model.textController.text}';
+                          if (phoneNumberVal == null ||
+                              phoneNumberVal.isEmpty ||
+                              !phoneNumberVal.startsWith('+')) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                    'Phone Number is required and has to start with +.'),
+                              ),
                             );
-                          },
-                        );
-                      },
-                      text: FFLocalizations.of(context).getText(
-                        'bw7tndsu' /* Send OTP */,
-                      ),
-                      options: FFButtonOptions(
-                        width: double.infinity,
-                        height: 40.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            24.0, 6.0, 24.0, 6.0),
-                        iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primary,
-                        textStyle:
-                            FlutterFlowTheme.of(context).bodyMedium.override(
-                                  fontFamily: 'Roboto',
-                                  color: FlutterFlowTheme.of(context).secondary,
-                                  fontSize: 12.0,
-                                  letterSpacing: 0.0,
-                                ),
-                        elevation: 0.5,
-                        borderSide: const BorderSide(
-                          width: 0.0,
+                            return;
+                          }
+                          await authManager.beginPhoneAuth(
+                            context: context,
+                            phoneNumber: phoneNumberVal,
+                            onCodeSent: (context) async {
+                              context.goNamedAuth(
+                                'OtpScreen',
+                                context.mounted,
+                                queryParameters: {
+                                  'mobileNumber': serializeParam(
+                                    '+91${_model.textController.text}',
+                                    ParamType.String,
+                                  ),
+                                }.withoutNulls,
+                                ignoreRedirect: true,
+                              );
+                            },
+                          );
+                        },
+                        text: FFLocalizations.of(context).getText(
+                          'bw7tndsu' /* Send OTP */,
                         ),
-                        borderRadius: BorderRadius.circular(6.0),
+                        options: FFButtonOptions(
+                          width: 200.0,
+                          height: 40.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              24.0, 6.0, 24.0, 6.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primary,
+                          textStyle: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: 'Urbanist',
+                                color: FlutterFlowTheme.of(context).secondary,
+                                fontSize: 12.0,
+                                letterSpacing: 0.0,
+                              ),
+                          elevation: 0.5,
+                          borderSide: BorderSide(
+                            width: 0.0,
+                          ),
+                          borderRadius: BorderRadius.circular(6.0),
+                        ),
                       ),
                     ),
                   ),
@@ -234,43 +243,41 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: RichText(
                       textScaler: MediaQuery.of(context).textScaler,
                       text: TextSpan(
                         children: [
                           TextSpan(
                             text: FFLocalizations.of(context).getText(
-                              'cxu104i9' /* By creating account, you agree... */,
+                              'cxu104i9' /* By creating account, I agree t... */,
                             ),
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
-                                      fontFamily: 'Roboto',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
+                                      fontFamily: 'Urbanist',
                                       letterSpacing: 0.0,
                                     ),
                           ),
                           TextSpan(
                             text: FFLocalizations.of(context).getText(
-                              '4hr4kzfb' /* Fitty, */,
+                              '4hr4kzfb' /* gumm's */,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .headlineSmall
                                 .override(
-                                  fontFamily: 'Roboto',
+                                  fontFamily: 'Urbanist',
                                   fontSize: 13.0,
                                   letterSpacing: 0.0,
                                 ),
                           ),
                           TextSpan(
                             text: FFLocalizations.of(context).getText(
-                              'xyh25b38' /*  Terms and Conditions  */,
+                              'xyh25b38' /*  Terms & conditions */,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Roboto',
+                                  fontFamily: 'Urbanist',
                                   color: FlutterFlowTheme.of(context).secondary,
                                   fontSize: 13.0,
                                   letterSpacing: 0.0,
@@ -286,15 +293,11 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                             text: FFLocalizations.of(context).getText(
                               '6uijtmhf' /*  and  */,
                             ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Roboto',
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  fontSize: 12.0,
-                                  letterSpacing: 0.0,
-                                ),
+                            style:
+                                FlutterFlowTheme.of(context).bodySmall.override(
+                                      fontFamily: 'Urbanist',
+                                      letterSpacing: 0.0,
+                                    ),
                           ),
                           TextSpan(
                             text: FFLocalizations.of(context).getText(
@@ -303,7 +306,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Roboto',
+                                  fontFamily: 'Urbanist',
                                   color: FlutterFlowTheme.of(context).secondary,
                                   fontSize: 13.0,
                                   letterSpacing: 0.0,
@@ -322,16 +325,14 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Roboto',
+                                  fontFamily: 'Urbanist',
                                   letterSpacing: 0.0,
                                   decoration: TextDecoration.underline,
                                 ),
                           )
                         ],
                         style: FlutterFlowTheme.of(context).bodySmall.override(
-                              fontFamily: 'Roboto',
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              fontSize: 12.0,
+                              fontFamily: 'Urbanist',
                               letterSpacing: 0.0,
                             ),
                       ),

@@ -3,8 +3,12 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/global_component/background_card/background_card_widget.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'welcome_screen_model.dart';
 export 'welcome_screen_model.dart';
 
@@ -44,8 +48,8 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
             curve: Curves.easeInOut,
             delay: 350.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 30.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 30.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -64,8 +68,8 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
             curve: Curves.easeInOut,
             delay: 400.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 30.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 30.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -84,8 +88,8 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
             curve: Curves.bounceOut,
             delay: 300.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.6, 0.6),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.6, 0.6),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -113,7 +117,7 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
             wrapWithModel(
               model: _model.backgroundCardModel,
               updateCallback: () => safeSetState(() {}),
-              child: const BackgroundCardWidget(),
+              child: BackgroundCardWidget(),
             ),
             Column(
               mainAxisSize: MainAxisSize.max,
@@ -125,46 +129,39 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8.0),
-                          child: Image.asset(
-                            'assets/images/logo.png',
-                            width: 120.0,
-                            height: 120.0,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 44.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 42.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
-                            'sz9dux2j' /* Welcome! */,
+                            'sz9dux2j' /* gumm */,
                           ),
                           style: FlutterFlowTheme.of(context)
-                              .displaySmall
+                              .displayLarge
                               .override(
-                                fontFamily: 'Roboto',
+                                fontFamily: 'Urbanist',
+                                color: FlutterFlowTheme.of(context).primary,
                                 letterSpacing: 0.0,
+                                fontStyle: FontStyle.italic,
                               ),
                         ).animateOnPageLoad(
                             animationsMap['textOnPageLoadAnimation1']!),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             44.0, 8.0, 44.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
-                            'j2yq8gyo' /* Start your journey to a health... */,
+                            'j2yq8gyo' /* Sticks Healthy Habits */,
                           ),
                           textAlign: TextAlign.center,
-                          style:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Roboto',
-                                    letterSpacing: 0.0,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .titleSmall
+                              .override(
+                                fontFamily: 'Urbanist',
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                letterSpacing: 0.0,
+                              ),
                         ).animateOnPageLoad(
                             animationsMap['textOnPageLoadAnimation2']!),
                       ),
@@ -173,15 +170,15 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                 ),
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 44.0),
+                      EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 44.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
                         child: Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 6.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -193,16 +190,16 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                               options: FFButtonOptions(
                                 width: 230.0,
                                 height: 52.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 6.0, 24.0, 6.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Roboto',
+                                      fontFamily: 'Urbanist',
                                       color:
                                           FlutterFlowTheme.of(context).primary,
                                       fontSize: 12.0,
@@ -221,9 +218,9 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                       ),
                       Expanded(
                         child: Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 6.0, 0.0, 0.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -235,22 +232,22 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                               options: FFButtonOptions(
                                 width: 230.0,
                                 height: 52.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 6.0, 24.0, 6.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Roboto',
+                                      fontFamily: 'Urbanist',
                                       color: FlutterFlowTheme.of(context)
                                           .secondary,
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 0.5,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(6.0),

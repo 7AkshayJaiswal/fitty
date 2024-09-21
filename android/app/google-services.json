@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "700115072881",
-    "project_id": "fitty-41f26",
-    "storage_bucket": "fitty-41f26.appspot.com"
+    "project_number": "841935504894",
+    "project_id": "gumm-be034",
+    "storage_bucket": "gumm-be034.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:700115072881:android:53ac8a2cca314c5463e8d0",
+        "mobilesdk_app_id": "1:841935504894:android:e8bcf26761b29802c76caf",
         "android_client_info": {
-          "package_name": "com.fitty"
+          "package_name": "com.gumm.app"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCrVmtvNpUadOxJm7-VV_HWlWvTIq-pjKA"
+          "current_key": "AIzaSyDNwpM44yAJ1gz1YIjOo1K46JToVCWESd8"
         }
       ],
       "services": {

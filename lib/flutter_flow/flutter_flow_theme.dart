@@ -103,14 +103,14 @@ class LightModeTheme extends FlutterFlowTheme {
   @Deprecated('Use tertiary instead')
   Color get tertiaryColor => tertiary;
 
-  late Color primary = const Color(0xFFC6FE1E);
+  late Color primary = const Color(0xFF89E219);
   late Color secondary = const Color(0xFF1564FF);
   late Color tertiary = const Color(0xFF93FF59);
   late Color alternate = const Color(0xFFE5E6EA);
   late Color primaryText = const Color(0xFFE1F6F8);
-  late Color secondaryText = const Color(0xFFECECEC);
+  late Color secondaryText = const Color(0xFF0D0D0D);
   late Color primaryBackground = const Color(0xFF0D0D0D);
-  late Color secondaryBackground = const Color(0xFF242425);
+  late Color secondaryBackground = const Color(0xFFFFFFFF);
   late Color accent1 = const Color(0xFFD7F2F4);
   late Color accent2 = const Color(0xFF865DDB);
   late Color accent3 = const Color(0xFFB1EA0A);
@@ -159,108 +159,108 @@ class ThemeTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Roboto';
+  String get displayLargeFamily => 'Urbanist';
   TextStyle get displayLarge => GoogleFonts.getFont(
-        'Roboto',
+        'Urbanist',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 64.0,
       );
-  String get displayMediumFamily => 'Roboto';
+  String get displayMediumFamily => 'Urbanist';
   TextStyle get displayMedium => GoogleFonts.getFont(
-        'Roboto',
+        'Urbanist',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 44.0,
       );
-  String get displaySmallFamily => 'Roboto';
+  String get displaySmallFamily => 'Urbanist';
   TextStyle get displaySmall => GoogleFonts.getFont(
-        'Roboto',
+        'Urbanist',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 36.0,
       );
-  String get headlineLargeFamily => 'Roboto';
+  String get headlineLargeFamily => 'Urbanist';
   TextStyle get headlineLarge => GoogleFonts.getFont(
-        'Roboto',
+        'Urbanist',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 32.0,
       );
-  String get headlineMediumFamily => 'Roboto';
+  String get headlineMediumFamily => 'Urbanist';
   TextStyle get headlineMedium => GoogleFonts.getFont(
-        'Roboto',
+        'Urbanist',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 28.0,
       );
-  String get headlineSmallFamily => 'Roboto';
+  String get headlineSmallFamily => 'Urbanist';
   TextStyle get headlineSmall => GoogleFonts.getFont(
-        'Roboto',
+        'Urbanist',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 24.0,
       );
-  String get titleLargeFamily => 'Roboto';
+  String get titleLargeFamily => 'Urbanist';
   TextStyle get titleLarge => GoogleFonts.getFont(
-        'Roboto',
+        'Urbanist',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 20.0,
       );
-  String get titleMediumFamily => 'Roboto';
+  String get titleMediumFamily => 'Urbanist';
   TextStyle get titleMedium => GoogleFonts.getFont(
-        'Roboto',
+        'Urbanist',
         color: theme.info,
         fontWeight: FontWeight.w600,
         fontSize: 18.0,
       );
-  String get titleSmallFamily => 'Roboto';
+  String get titleSmallFamily => 'Urbanist';
   TextStyle get titleSmall => GoogleFonts.getFont(
-        'Roboto',
+        'Urbanist',
         color: theme.info,
         fontWeight: FontWeight.w600,
         fontSize: 16.0,
       );
-  String get labelLargeFamily => 'Roboto';
+  String get labelLargeFamily => 'Urbanist';
   TextStyle get labelLarge => GoogleFonts.getFont(
-        'Roboto',
+        'Urbanist',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get labelMediumFamily => 'Roboto';
+  String get labelMediumFamily => 'Urbanist';
   TextStyle get labelMedium => GoogleFonts.getFont(
-        'Roboto',
+        'Urbanist',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get labelSmallFamily => 'Roboto';
+  String get labelSmallFamily => 'Urbanist';
   TextStyle get labelSmall => GoogleFonts.getFont(
-        'Roboto',
+        'Urbanist',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
-  String get bodyLargeFamily => 'Roboto';
+  String get bodyLargeFamily => 'Urbanist';
   TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Roboto',
+        'Urbanist',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get bodyMediumFamily => 'Roboto';
+  String get bodyMediumFamily => 'Urbanist';
   TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Roboto',
+        'Urbanist',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get bodySmallFamily => 'Roboto';
+  String get bodySmallFamily => 'Urbanist';
   TextStyle get bodySmall => GoogleFonts.getFont(
-        'Roboto',
-        color: const Color(0xFFAEBFC1),
+        'Urbanist',
+        color: Color(0xFFAEBFC1),
         fontWeight: FontWeight.w200,
         fontSize: 12.0,
       );

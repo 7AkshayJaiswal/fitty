@@ -1,9 +1,13 @@
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'background_card_model.dart';
 export 'background_card_model.dart';
 
@@ -47,8 +51,8 @@ class _BackgroundCardWidgetState extends State<BackgroundCardWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(3.0, 3.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(3.0, 3.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -76,12 +80,6 @@ class _BackgroundCardWidgetState extends State<BackgroundCardWidget>
         height: double.infinity,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          image: DecorationImage(
-            fit: BoxFit.none,
-            image: Image.asset(
-              'assets/images/transparent_logo.png',
-            ).image,
-          ),
         ),
         child: Container(
           width: 100.0,
@@ -90,12 +88,12 @@ class _BackgroundCardWidgetState extends State<BackgroundCardWidget>
             gradient: LinearGradient(
               colors: [
                 FlutterFlowTheme.of(context).primaryBackground,
-                const Color(0xCD0D0D0D),
+                Color(0xCD0D0D0D),
                 FlutterFlowTheme.of(context).primaryBackground
               ],
-              stops: const [0.2, 0.5, 1.0],
-              begin: const AlignmentDirectional(1.0, -1.0),
-              end: const AlignmentDirectional(-1.0, 1.0),
+              stops: [0.2, 0.5, 1.0],
+              begin: AlignmentDirectional(1.0, -1.0),
+              end: AlignmentDirectional(-1.0, 1.0),
             ),
           ),
         ),

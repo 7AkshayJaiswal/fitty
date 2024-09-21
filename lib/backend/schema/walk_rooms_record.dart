@@ -3,15 +3,17 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
+import '/backend/schema/util/schema_util.dart';
+import '/backend/schema/enums/enums.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 class WalkRoomsRecord extends FirestoreRecord {
   WalkRoomsRecord._(
-    super.reference,
-    super.data,
-  ) {
+    DocumentReference reference,
+    Map<String, dynamic> data,
+  ) : super(reference, data) {
     _initializeFields();
   }
 
@@ -50,15 +52,15 @@ class WalkRoomsRecord extends FirestoreRecord {
   DateTime? get endDate => _endDate;
   bool hasEndDate() => _endDate != null;
 
-  // "privacy" field.
-  bool? _privacy;
-  bool get privacy => _privacy ?? false;
-  bool hasPrivacy() => _privacy != null;
-
   // "expired" field.
   bool? _expired;
   bool get expired => _expired ?? false;
   bool hasExpired() => _expired != null;
+
+  // "privacy" field.
+  PrivacyType? _privacy;
+  PrivacyType? get privacy => _privacy;
+  bool hasPrivacy() => _privacy != null;
 
   void _initializeFields() {
     _roomName = snapshotData['roomName'] as String?;
@@ -68,8 +70,8 @@ class WalkRoomsRecord extends FirestoreRecord {
     _stepGoal = castToType<int>(snapshotData['stepGoal']);
     _startDate = snapshotData['startDate'] as DateTime?;
     _endDate = snapshotData['endDate'] as DateTime?;
-    _privacy = snapshotData['privacy'] as bool?;
     _expired = snapshotData['expired'] as bool?;
+    _privacy = deserializeEnum<PrivacyType>(snapshotData['privacy']);
   }
 
   static CollectionReference get collection =>
@@ -114,8 +116,8 @@ Map<String, dynamic> createWalkRoomsRecordData({
   int? stepGoal,
   DateTime? startDate,
   DateTime? endDate,
-  bool? privacy,
   bool? expired,
+  PrivacyType? privacy,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -126,8 +128,8 @@ Map<String, dynamic> createWalkRoomsRecordData({
       'stepGoal': stepGoal,
       'startDate': startDate,
       'endDate': endDate,
-      'privacy': privacy,
       'expired': expired,
+      'privacy': privacy,
     }.withoutNulls,
   );
 
@@ -146,8 +148,8 @@ class WalkRoomsRecordDocumentEquality implements Equality<WalkRoomsRecord> {
         e1?.stepGoal == e2?.stepGoal &&
         e1?.startDate == e2?.startDate &&
         e1?.endDate == e2?.endDate &&
-        e1?.privacy == e2?.privacy &&
-        e1?.expired == e2?.expired;
+        e1?.expired == e2?.expired &&
+        e1?.privacy == e2?.privacy;
   }
 
   @override
@@ -159,8 +161,8 @@ class WalkRoomsRecordDocumentEquality implements Equality<WalkRoomsRecord> {
         e?.stepGoal,
         e?.startDate,
         e?.endDate,
-        e?.privacy,
-        e?.expired
+        e?.expired,
+        e?.privacy
       ]);
 
   @override

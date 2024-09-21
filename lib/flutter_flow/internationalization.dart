@@ -108,12 +108,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // WelcomeScreen
   {
     'sz9dux2j': {
-      'en': 'Welcome!',
+      'en': 'gumm',
       'hi': 'स्वागत!',
     },
     'j2yq8gyo': {
-      'en':
-          'Start your journey to a healthier, more active lifestyle. Join live sessions, walk while you talk, and track your steps effortlessly.',
+      'en': 'Sticks Healthy Habits',
       'hi':
           'एक स्वस्थ, अधिक सक्रिय जीवनशैली की ओर अपनी यात्रा शुरू करें। लाइव सेशन में शामिल हों, बात करते हुए चलें और अपने कदमों को सहजता से ट्रैक करें।',
     },
@@ -170,10 +169,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // LoginScreen
   {
     'a922furx': {
-      'en': 'Fitty',
+      'en': 'gumm',
       'hi': 'फिट्टी',
     },
-    '7hv1dwzn': {
+    '5cjf8nao': {
       'en': '',
       'hi': '',
     },
@@ -181,7 +180,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Mobile Number',
       'hi': 'मोबाइल नंबर',
     },
-    'igpbm5pl': {
+    'qnpap77a': {
       'en': '',
       'hi': '',
     },
@@ -190,15 +189,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'hi': 'ओटीपी भेजें',
     },
     'cxu104i9': {
-      'en': 'By creating account, you agree to ',
+      'en': 'By creating account, I agree to ',
       'hi': 'खाता बनाकर, आप सहमत होते हैं',
     },
     '4hr4kzfb': {
-      'en': 'Fitty,',
+      'en': 'gumm\'s',
       'hi': 'फिट्टी,',
     },
     'xyh25b38': {
-      'en': ' Terms and Conditions ',
+      'en': ' Terms & conditions',
       'hi': 'नियम और शर्तें',
     },
     '6uijtmhf': {
@@ -221,7 +220,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // OtpScreen
   {
     'lzp4nne1': {
-      'en': 'Fitty',
+      'en': 'gumm',
       'hi': 'फिट्टी',
     },
     'zdrqfmka': {
@@ -245,11 +244,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'hi': 'खाता बनाकर, आप सहमत होते हैं',
     },
     'o0cter3k': {
-      'en': 'Fitty,',
+      'en': 'gumm\'s',
       'hi': 'फिट्टी,',
     },
     '9rm9a228': {
-      'en': ' Terms and Conditions ',
+      'en': ' Terms & Conditions ',
       'hi': 'नियम और शर्तें',
     },
     'fu9a2i0z': {
@@ -283,12 +282,28 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Anyone can join this ',
       'hi': 'कोई भी इसमें शामिल हो सकता है',
     },
+    '2wvwykzg': {
+      'en': 'Full Day Challenge\'s',
+      'hi': '',
+    },
+    '32x3y98z': {
+      'en': 'Join',
+      'hi': '',
+    },
+    'm13o6f1m': {
+      'en': 'Walk & Talk with Friends',
+      'hi': '',
+    },
+    'y8qi68zz': {
+      'en': 'Create Walk',
+      'hi': '',
+    },
     'nz0bft14': {
-      'en': 'Fitty',
+      'en': 'gumm',
       'hi': 'फिट्टी',
     },
     '7x4pfrw4': {
-      'en': 'Fit',
+      'en': 'Fitt',
       'hi': 'उपयुक्त',
     },
   },
@@ -303,11 +318,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'hi': '',
     },
     '5ep8sd7b': {
-      'en': 'Fitty',
+      'en': 'gumm',
       'hi': 'फिट्टी',
     },
     'tt9dn6ub': {
-      'en': 'My Day',
+      'en': 'Me',
       'hi': 'मेरा दिन',
     },
   },
@@ -326,7 +341,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'hi': 'अंतिम संदेश',
     },
     'c1p1cejg': {
-      'en': 'Fitty',
+      'en': 'gumm',
       'hi': 'फिट्टी',
     },
     'qpk1brus': {
@@ -403,7 +418,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Your Name',
       'hi': 'आपका नाम',
     },
-    '86uxc20s': {
+    'vofgsjs1': {
       'en': '',
       'hi': '',
     },
@@ -415,7 +430,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Your Email',
       'hi': 'आपका ईमेल',
     },
-    '4p4n875f': {
+    'ddg3k631': {
       'en': '',
       'hi': '',
     },
@@ -447,7 +462,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Height (Fit)',
       'hi': 'ऊंचाई (फिट)',
     },
-    'rscqmkk6': {
+    'd55r4jxz': {
       'en': '',
       'hi': '',
     },
@@ -455,7 +470,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Weight (KG)',
       'hi': 'वजन (किलोग्राम)',
     },
-    '20znbepf': {
+    'j2hau5my': {
       'en': '',
       'hi': '',
     },
@@ -540,9 +555,242 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Room
   {
-    'iih0463m': {
+    '2j5a2g66': {
       'en': 'Home',
-      'hi': 'घर',
+      'hi': '',
+    },
+  },
+  // CreateWalkRoomScreen
+  {
+    'qc4kpics': {
+      'en': 'WalkRoom',
+      'hi': '',
+    },
+    'f6hc3tn9': {
+      'en': 'Fit',
+      'hi': '',
+    },
+  },
+  // HomeViswa
+  {
+    'floxqwrq': {
+      'en': 'Full day challenges',
+      'hi': '',
+    },
+    'e3dvilm9': {
+      'en': '5K',
+      'hi': '',
+    },
+    'tcu0yfq3': {
+      'en': '5K steps challenge',
+      'hi': '',
+    },
+    '3rlbd2sz': {
+      'en': 'Steps count',
+      'hi': '',
+    },
+    'zfbto9co': {
+      'en': '',
+      'hi': '',
+    },
+    'vvqy3rnz': {
+      'en': '7K steps challenge',
+      'hi': '',
+    },
+    'unhbyr3g': {
+      'en': 'Unlock with 7 day streak',
+      'hi': '',
+    },
+    'pcmy6k4g': {
+      'en': 'You are at 2 days Streak',
+      'hi': '',
+    },
+    'x3tosewm': {
+      'en': '',
+      'hi': '',
+    },
+    'mrs989l7': {
+      'en': '7K steps challenge',
+      'hi': '',
+    },
+    'nynyteza': {
+      'en': 'Unlock with 1 week streak',
+      'hi': '',
+    },
+    '87bx2svq': {
+      'en': 'Share the Good Stuff',
+      'hi': '',
+    },
+    'huke2eq8': {
+      'en': 'INVITE FRIENDS to GUMM',
+      'hi': '',
+    },
+    'usr2uqwz': {
+      'en': 'Programs for you',
+      'hi': '',
+    },
+    'zt8tyc7p': {
+      'en': 'see all',
+      'hi': '',
+    },
+    'g1quqkgn': {
+      'en': 'All',
+      'hi': '',
+    },
+    'w8zk2bx1': {
+      'en': 'Steps',
+      'hi': '',
+    },
+    'h5gxie2h': {
+      'en': 'Stretch',
+      'hi': '',
+    },
+    'h8mwsd9z': {
+      'en': 'Strength',
+      'hi': '',
+    },
+    '9t0bsb82': {
+      'en': 'Cardio',
+      'hi': '',
+    },
+    '8k3hix4y': {
+      'en': 'Trainer Name',
+      'hi': '',
+    },
+    'fv29ehh9': {
+      'en': 'Program Name\n',
+      'hi': '',
+    },
+    'znz11201': {
+      'en': 'Yoga | Beginner | ',
+      'hi': '',
+    },
+    'bus8bu6w': {
+      'en': 'Follow',
+      'hi': '',
+    },
+    '3gycdzuf': {
+      'en': '10K+ following',
+      'hi': '',
+    },
+    '6fuevgua': {
+      'en': 'Friend suggestions',
+      'hi': '',
+    },
+    '7thwwgyx': {
+      'en': 'see all',
+      'hi': '',
+    },
+    '4grvl5ow': {
+      'en': 'gumm',
+      'hi': '',
+    },
+    '7ajll0sv': {
+      'en': 'gumm',
+      'hi': '',
+    },
+  },
+  // Viswa_onboarding
+  {
+    'fm2g8bq3': {
+      'en': 'Your Good Name',
+      'hi': '',
+    },
+    'w9jomni5': {
+      'en': 'TextField',
+      'hi': '',
+    },
+    'ifilfzp7': {
+      'en': 'Name',
+      'hi': '',
+    },
+    'hv24v5o1': {
+      'en': 'Which Gender do you associate with?',
+      'hi': '',
+    },
+    '4skldrl6': {
+      'en': 'Male',
+      'hi': '',
+    },
+    'ywq6m8lr': {
+      'en': 'Female',
+      'hi': '',
+    },
+    'old8p3ir': {
+      'en': 'What\'s your Weight?',
+      'hi': '',
+    },
+    'mludj7fi': {
+      'en': 'Scrolling Widget to select',
+      'hi': '',
+    },
+    'er68j8kn': {
+      'en': 'What\'s your Height?',
+      'hi': '',
+    },
+    'vh94kn5l': {
+      'en': 'Vertical scrolling widget',
+      'hi': '',
+    },
+    'gq8fbe9g': {
+      'en': 'What\'s your core Goal?',
+      'hi': '',
+    },
+    '08h1lt8b': {
+      'en': 'I wanna stay fit',
+      'hi': '',
+    },
+    'hek97j34': {
+      'en': 'I want to lead Healthy lifestyle',
+      'hi': '',
+    },
+    'qp7mvvok': {
+      'en': 'Manage Diabetes/Thyroid/PCOS/any',
+      'hi': '',
+    },
+    'kcj93or9': {
+      'en': 'To lose or gain weight',
+      'hi': '',
+    },
+    'hkikojlj': {
+      'en': 'Others',
+      'hi': '',
+    },
+    'z770vdty': {
+      'en': 'How often do you exercise in recent times?',
+      'hi': '',
+    },
+    'rwx2jp8y': {
+      'en': 'None',
+      'hi': '',
+    },
+    'ideklwae': {
+      'en': '1 or 2 times a week',
+      'hi': '',
+    },
+    '8cetapsp': {
+      'en': '3 or 4 times a week',
+      'hi': '',
+    },
+    '1mfl42cf': {
+      'en': 'More than 4 times a week',
+      'hi': '',
+    },
+    '80e6y1b3': {
+      'en': 'You have been added to \n5K steps challenge',
+      'hi': '',
+    },
+    '8fkdpfdi': {
+      'en': 'Congrats on starting your Healthy routine',
+      'hi': '',
+    },
+    '9fi6lago': {
+      'en': 'Let\'s Jump IN',
+      'hi': '',
+    },
+    'risuh1sv': {
+      'en': 'Home',
+      'hi': '',
     },
   },
   // UserInfoSheet
@@ -558,6 +806,81 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'ljotla8c': {
       'en': 'Requested',
       'hi': 'अनुरोधित',
+    },
+  },
+  // CreateWalkRoom
+  {
+    'yujpx476': {
+      'en': 'Steps Room',
+      'hi': '',
+    },
+    'm8dvj2k0': {
+      'en': 'Public Room',
+      'hi': '',
+    },
+    'ibenx2ed': {
+      'en': 'Start Time',
+      'hi': '',
+    },
+    '6o1p114y': {
+      'en': 'Immediate',
+      'hi': '',
+    },
+    '4g2falrp': {
+      'en': 'Scheduled',
+      'hi': '',
+    },
+    'mp706de0': {
+      'en': 'Your walkroom scheduled for ',
+      'hi': '',
+    },
+    '76neiosv': {
+      'en': 'Type',
+      'hi': '',
+    },
+    '5gpsdkl4': {
+      'en': 'Type',
+      'hi': '',
+    },
+    '8z5w2exh': {
+      'en': 'Walking',
+      'hi': '',
+    },
+    'v7f6wnza': {
+      'en': 'Jogging',
+      'hi': '',
+    },
+    'zhgu4h2n': {
+      'en': 'Running',
+      'hi': '',
+    },
+    '1syeimda': {
+      'en': 'Time Duration',
+      'hi': '',
+    },
+    '99pr3nxz': {
+      'en': '15 Min',
+      'hi': '',
+    },
+    'vy85uk4n': {
+      'en': '30 Min',
+      'hi': '',
+    },
+    'j7tjvw6f': {
+      'en': '45 Min',
+      'hi': '',
+    },
+    'i31w2v6u': {
+      'en': '1 Hours',
+      'hi': '',
+    },
+    'dnp996b8': {
+      'en': '30 Min',
+      'hi': '',
+    },
+    'xukckbqk': {
+      'en': 'Start',
+      'hi': '',
     },
   },
   // Miscellaneous

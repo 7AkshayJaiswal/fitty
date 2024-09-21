@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyAPn_xfcbQgrztziScHjYh4YXUEU2k9co8</string>
+	<string>AIzaSyBXiqy73ykayIsY5RM_p0n-9DxYRhJ1lA8</string>
 	<key>GCM_SENDER_ID</key>
-	<string>700115072881</string>
+	<string>841935504894</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.fitty</string>
+	<string>com.gumm.app</string>
 	<key>PROJECT_ID</key>
-	<string>fitty-41f26</string>
+	<string>gumm-be034</string>
 	<key>STORAGE_BUCKET</key>
-	<string>fitty-41f26.appspot.com</string>
+	<string>gumm-be034.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:700115072881:ios:b464d5e9c385fea963e8d0</string>
+	<string>1:841935504894:ios:dade60ac4bc01f68c76caf</string>
 </dict>
 </plist>

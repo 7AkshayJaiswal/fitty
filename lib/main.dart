@@ -1,8 +1,10 @@
 import 'package:provider/provider.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'auth/firebase_auth/firebase_user_provider.dart';
 import 'auth/firebase_auth/auth_util.dart';
 
@@ -10,6 +12,8 @@ import 'backend/firebase/firebase_config.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
 
 void main() async {
@@ -23,13 +27,11 @@ void main() async {
 
   runApp(ChangeNotifierProvider(
     create: (context) => appState,
-    child: const MyApp(),
+    child: MyApp(),
   ));
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({super.key});
-
   // This widget is the root of your application.
   @override
   State<MyApp> createState() => _MyAppState();
@@ -56,13 +58,13 @@ class _MyAppState extends State<MyApp> {
 
     _appStateNotifier = AppStateNotifier.instance;
     _router = createRouter(_appStateNotifier);
-    userStream = fittyFirebaseUserStream()
+    userStream = gummFirebaseUserStream()
       ..listen((user) {
         _appStateNotifier.update(user);
       });
     jwtTokenStream.listen((_) {});
     Future.delayed(
-      const Duration(milliseconds: 1500),
+      Duration(milliseconds: 1500),
       () => _appStateNotifier.stopShowingSplashImage(),
     );
   }
@@ -85,8 +87,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Fitty',
-      localizationsDelegates: const [
+      title: 'gumm',
+      localizationsDelegates: [
         FFLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
@@ -100,15 +102,15 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         brightness: Brightness.light,
         scrollbarTheme: ScrollbarThemeData(
-          thumbVisibility: WidgetStateProperty.all(false),
-          thumbColor: WidgetStateProperty.resolveWith((states) {
-            if (states.contains(WidgetState.dragged)) {
-              return const Color(0xff1564ff);
+          thumbVisibility: MaterialStateProperty.all(false),
+          thumbColor: MaterialStateProperty.resolveWith((states) {
+            if (states.contains(MaterialState.dragged)) {
+              return Color(4279592191);
             }
-            if (states.contains(WidgetState.hovered)) {
-              return const Color(0xff1564ff);
+            if (states.contains(MaterialState.hovered)) {
+              return Color(4279592191);
             }
-            return const Color(0xff1564ff);
+            return Color(4279592191);
           }),
         ),
       ),
@@ -119,7 +121,7 @@ class _MyAppState extends State<MyApp> {
 }
 
 class NavBarPage extends StatefulWidget {
-  const NavBarPage({super.key, this.initialPage, this.page});
+  NavBarPage({Key? key, this.initialPage, this.page}) : super(key: key);
 
   final String? initialPage;
   final Widget? page;
@@ -130,7 +132,7 @@ class NavBarPage extends StatefulWidget {
 
 /// This is the private State class that goes with NavBarPage.
 class _NavBarPageState extends State<NavBarPage> {
-  String _currentPageName = 'Home-Fit';
+  String _currentPageName = 'HomeViswa';
   late Widget? _currentPage;
 
   @override
@@ -143,9 +145,9 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
-      'Home-Fit': const HomeFitWidget(),
-      'Home-MyDay': const HomeMyDayWidget(),
-      'Home-Friends': const HomeFriendsWidget(),
+      'HomeViswa': HomeViswaWidget(),
+      'Home-Fit': HomeFitWidget(),
+      'Home-MyDay': HomeMyDayWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -165,32 +167,32 @@ class _NavBarPageState extends State<NavBarPage> {
         type: BottomNavigationBarType.fixed,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: const Icon(
+            icon: Icon(
+              Icons.home_outlined,
+              size: 24.0,
+            ),
+            label: FFLocalizations.of(context).getText(
+              '7ajll0sv' /* gumm */,
+            ),
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
               Icons.directions_run_rounded,
               size: 24.0,
             ),
             label: FFLocalizations.of(context).getText(
-              '7x4pfrw4' /* Fit */,
+              '7x4pfrw4' /* Fitt */,
             ),
             tooltip: '',
           ),
           BottomNavigationBarItem(
-            icon: const Icon(
+            icon: Icon(
               Icons.keyboard_double_arrow_up_rounded,
               size: 24.0,
             ),
             label: FFLocalizations.of(context).getText(
-              'tt9dn6ub' /* My Day */,
-            ),
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(
-              Icons.groups_3_sharp,
-              size: 24.0,
-            ),
-            label: FFLocalizations.of(context).getText(
-              'qpk1brus' /* Friends */,
+              'tt9dn6ub' /* Me */,
             ),
             tooltip: '',
           )

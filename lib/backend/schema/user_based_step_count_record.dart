@@ -3,15 +3,17 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
+import '/backend/schema/util/schema_util.dart';
+import '/backend/schema/enums/enums.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 class UserBasedStepCountRecord extends FirestoreRecord {
   UserBasedStepCountRecord._(
-    super.reference,
-    super.data,
-  ) {
+    DocumentReference reference,
+    Map<String, dynamic> data,
+  ) : super(reference, data) {
     _initializeFields();
   }
 
@@ -35,6 +37,16 @@ class UserBasedStepCountRecord extends FirestoreRecord {
   DateTime? get leftAt => _leftAt;
   bool hasLeftAt() => _leftAt != null;
 
+  // "joinedCount" field.
+  int? _joinedCount;
+  int get joinedCount => _joinedCount ?? 0;
+  bool hasJoinedCount() => _joinedCount != null;
+
+  // "leftCount" field.
+  int? _leftCount;
+  int get leftCount => _leftCount ?? 0;
+  bool hasLeftCount() => _leftCount != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
@@ -42,6 +54,8 @@ class UserBasedStepCountRecord extends FirestoreRecord {
     _user = snapshotData['user'] as DocumentReference?;
     _joinedAt = snapshotData['joinedAt'] as DateTime?;
     _leftAt = snapshotData['leftAt'] as DateTime?;
+    _joinedCount = castToType<int>(snapshotData['joinedCount']);
+    _leftCount = castToType<int>(snapshotData['leftCount']);
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -89,6 +103,8 @@ Map<String, dynamic> createUserBasedStepCountRecordData({
   DocumentReference? user,
   DateTime? joinedAt,
   DateTime? leftAt,
+  int? joinedCount,
+  int? leftCount,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -96,6 +112,8 @@ Map<String, dynamic> createUserBasedStepCountRecordData({
       'user': user,
       'joinedAt': joinedAt,
       'leftAt': leftAt,
+      'joinedCount': joinedCount,
+      'leftCount': leftCount,
     }.withoutNulls,
   );
 
@@ -111,12 +129,20 @@ class UserBasedStepCountRecordDocumentEquality
     return e1?.steps == e2?.steps &&
         e1?.user == e2?.user &&
         e1?.joinedAt == e2?.joinedAt &&
-        e1?.leftAt == e2?.leftAt;
+        e1?.leftAt == e2?.leftAt &&
+        e1?.joinedCount == e2?.joinedCount &&
+        e1?.leftCount == e2?.leftCount;
   }
 
   @override
-  int hash(UserBasedStepCountRecord? e) =>
-      const ListEquality().hash([e?.steps, e?.user, e?.joinedAt, e?.leftAt]);
+  int hash(UserBasedStepCountRecord? e) => const ListEquality().hash([
+        e?.steps,
+        e?.user,
+        e?.joinedAt,
+        e?.leftAt,
+        e?.joinedCount,
+        e?.leftCount
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is UserBasedStepCountRecord;
