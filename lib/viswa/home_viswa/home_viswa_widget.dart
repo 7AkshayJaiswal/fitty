@@ -5,9 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'package:provider/provider.dart';
 import 'home_viswa_model.dart';
 export 'home_viswa_model.dart';
 
@@ -64,7 +62,7 @@ class _HomeViswaWidgetState extends State<HomeViswaWidget> {
                         letterSpacing: 0.0,
                       ),
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: false,
                 elevation: 0.5,
               )
@@ -72,13 +70,13 @@ class _HomeViswaWidgetState extends State<HomeViswaWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 0.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'floxqwrq' /* Full day challenges */,
@@ -106,7 +104,7 @@ class _HomeViswaWidgetState extends State<HomeViswaWidget> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Stack(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               children: [
                                 CircularPercentIndicator(
                                   percent: 0.3,
@@ -173,7 +171,7 @@ class _HomeViswaWidgetState extends State<HomeViswaWidget> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Stack(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               children: [
                                 CircularPercentIndicator(
                                   percent: 0.2,
@@ -234,7 +232,7 @@ class _HomeViswaWidgetState extends State<HomeViswaWidget> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Stack(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             children: [
                               CircularPercentIndicator(
                                 percent: 0.2,
@@ -278,7 +276,7 @@ class _HomeViswaWidgetState extends State<HomeViswaWidget> {
                           ),
                         ],
                       ),
-                    ].divide(SizedBox(width: 10.0)),
+                    ].divide(const SizedBox(width: 10.0)),
                   ),
                   Container(
                     width: double.infinity,
@@ -333,14 +331,14 @@ class _HomeViswaWidgetState extends State<HomeViswaWidget> {
                     clipBehavior: Clip.none,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 10.0, 10.0, 10.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'usr2uqwz' /* Programs for you */,
@@ -392,7 +390,7 @@ class _HomeViswaWidgetState extends State<HomeViswaWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
                         child: FlutterFlowChoiceChips(
                           options: [
                             ChipData(
@@ -466,9 +464,9 @@ class _HomeViswaWidgetState extends State<HomeViswaWidget> {
                       Container(
                         width: 800.0,
                         height: 350.0,
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 10.0),
                           child: ListView(
                             padding: EdgeInsets.zero,
@@ -492,10 +490,10 @@ class _HomeViswaWidgetState extends State<HomeViswaWidget> {
                                   children: [
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(1.0, -1.0),
+                                          const AlignmentDirectional(1.0, -1.0),
                                       child: Stack(
                                         alignment:
-                                            AlignmentDirectional(0.0, -1.0),
+                                            const AlignmentDirectional(0.0, -1.0),
                                         children: [
                                           ClipRRect(
                                             borderRadius:
@@ -509,9 +507,9 @@ class _HomeViswaWidgetState extends State<HomeViswaWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 160.0, 0.0, 0.0),
                                               child: Text(
@@ -535,7 +533,7 @@ class _HomeViswaWidgetState extends State<HomeViswaWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(1.0, -1.0),
+                                                const AlignmentDirectional(1.0, -1.0),
                                             child: FlutterFlowIconButton(
                                               borderColor: Colors.transparent,
                                               borderRadius: 20.0,
@@ -559,9 +557,9 @@ class _HomeViswaWidgetState extends State<HomeViswaWidget> {
                                     Container(
                                       width: 150.0,
                                       height: 40.0,
-                                      decoration: BoxDecoration(),
+                                      decoration: const BoxDecoration(),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -583,7 +581,7 @@ class _HomeViswaWidgetState extends State<HomeViswaWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 5.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -601,7 +599,7 @@ class _HomeViswaWidgetState extends State<HomeViswaWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 5.0, 0.0, 0.0),
                                       child: FFButtonWidget(
                                         onPressed: () {
@@ -615,10 +613,10 @@ class _HomeViswaWidgetState extends State<HomeViswaWidget> {
                                           width: 150.0,
                                           height: 35.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 0.0, 24.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -633,7 +631,7 @@ class _HomeViswaWidgetState extends State<HomeViswaWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                           elevation: 3.0,
-                                          borderSide: BorderSide(
+                                          borderSide: const BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -643,7 +641,7 @@ class _HomeViswaWidgetState extends State<HomeViswaWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 5.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -663,19 +661,19 @@ class _HomeViswaWidgetState extends State<HomeViswaWidget> {
                                   ],
                                 ),
                               ),
-                            ].divide(SizedBox(width: 10.0)),
+                            ].divide(const SizedBox(width: 10.0)),
                           ),
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 10.0, 10.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   '6fuevgua' /* Friend suggestions */,
@@ -727,7 +725,7 @@ class _HomeViswaWidgetState extends State<HomeViswaWidget> {
                       ),
                     ],
                   ),
-                ].divide(SizedBox(height: 10.0)),
+                ].divide(const SizedBox(height: 10.0)),
               ),
             ),
           ),

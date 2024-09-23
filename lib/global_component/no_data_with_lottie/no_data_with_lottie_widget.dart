@@ -1,9 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-import 'package:provider/provider.dart';
 import 'no_data_with_lottie_model.dart';
 export 'no_data_with_lottie_model.dart';
 
@@ -11,7 +9,7 @@ class NoDataWithLottieWidget extends StatefulWidget {
   const NoDataWithLottieWidget({
     super.key,
     String? message,
-  }) : this.message = message ?? 'No data found';
+  }) : message = message ?? 'No data found';
 
   final String message;
 
@@ -56,9 +54,9 @@ class _NoDataWithLottieWidgetState extends State<NoDataWithLottieWidget> {
           animate: true,
         ),
         Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 12.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 12.0),
           child: Text(
-            widget!.message,
+            widget.message,
             textAlign: TextAlign.center,
             style: FlutterFlowTheme.of(context).bodySmall.override(
                   fontFamily: 'Urbanist',

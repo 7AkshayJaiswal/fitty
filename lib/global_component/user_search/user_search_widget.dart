@@ -1,21 +1,14 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/schema/enums/enums.dart';
-import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/global_component/user_info_sheet/user_info_sheet_widget.dart';
-import 'dart:math';
 import 'package:badges/badges.dart' as badges;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'user_search_model.dart';
 export 'user_search_model.dart';
 
@@ -92,7 +85,7 @@ class _UserSearchWidgetState extends State<UserSearchWidget>
                 actions: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                     child: FutureBuilder<int>(
                       future: queryFriendRequestsRecordCount(
                         queryBuilder: (friendRequestsRecord) =>
@@ -132,7 +125,7 @@ class _UserSearchWidgetState extends State<UserSearchWidget>
                             context.pushNamed(
                               'ViewRequests',
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType:
                                       PageTransitionType.rightToLeft,
@@ -159,12 +152,12 @@ class _UserSearchWidgetState extends State<UserSearchWidget>
                             shape: badges.BadgeShape.circle,
                             badgeColor: FlutterFlowTheme.of(context).tertiary,
                             elevation: 1.0,
-                            padding: EdgeInsets.all(6.0),
+                            padding: const EdgeInsets.all(6.0),
                             position: badges.BadgePosition.topEnd(),
                             animationType: badges.BadgeAnimationType.scale,
                             toAnimate: true,
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 6.0, 10.0, 6.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -195,13 +188,13 @@ class _UserSearchWidgetState extends State<UserSearchWidget>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 0.0),
                 child: TextFormField(
                   controller: _model.textController,
                   focusNode: _model.textFieldFocusNode,
                   onChanged: (_) => EasyDebounce.debounce(
                     '_model.textController',
-                    Duration(milliseconds: 2000),
+                    const Duration(milliseconds: 2000),
                     () async {
                       _model.searchTerm = _model.textController.text;
                       safeSetState(() {});
@@ -268,7 +261,7 @@ class _UserSearchWidgetState extends State<UserSearchWidget>
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'kx88sx4s' /* Recent search... */,
@@ -283,7 +276,7 @@ class _UserSearchWidgetState extends State<UserSearchWidget>
               ),
               Expanded(
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 0.0),
                   child: StreamBuilder<List<UsersRecord>>(
                     stream: queryUsersRecord(
                       queryBuilder: (usersRecord) => usersRecord.where(
@@ -318,7 +311,7 @@ class _UserSearchWidgetState extends State<UserSearchWidget>
                           final listViewUsersRecord =
                               listViewUsersRecordList[listViewIndex];
                           return Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 1.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -356,7 +349,7 @@ class _UserSearchWidgetState extends State<UserSearchWidget>
                                       blurRadius: 0.0,
                                       color: FlutterFlowTheme.of(context)
                                           .alternate,
-                                      offset: Offset(
+                                      offset: const Offset(
                                         0.0,
                                         1.0,
                                       ),
@@ -364,7 +357,7 @@ class _UserSearchWidgetState extends State<UserSearchWidget>
                                   ],
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(8.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -385,7 +378,7 @@ class _UserSearchWidgetState extends State<UserSearchWidget>
                                               CrossAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -414,7 +407,7 @@ class _UserSearchWidgetState extends State<UserSearchWidget>
                                               BorderRadius.circular(40.0),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(4.0),
+                                          padding: const EdgeInsets.all(4.0),
                                           child: FaIcon(
                                             FontAwesomeIcons.infoCircle,
                                             color: FlutterFlowTheme.of(context)

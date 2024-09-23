@@ -7,12 +7,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/gestures.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'create_walk_room_model.dart';
 export 'create_walk_room_model.dart';
 
@@ -52,20 +48,20 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Color(0xB20B191E),
       ),
       child: Align(
-        alignment: AlignmentDirectional(0.0, 1.0),
+        alignment: const AlignmentDirectional(0.0, 1.0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Align(
-                alignment: AlignmentDirectional(1.0, 0.0),
+                alignment: const AlignmentDirectional(1.0, 0.0),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 16.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 16.0),
                   child: FlutterFlowIconButton(
                     borderColor: Colors.transparent,
                     borderRadius: 30.0,
@@ -86,7 +82,7 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
               Material(
                 color: Colors.transparent,
                 elevation: 5.0,
-                shape: RoundedRectangleBorder(
+                shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(0.0),
                     bottomRight: Radius.circular(0.0),
@@ -98,7 +94,7 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).primaryBackground,
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(0.0),
                       bottomRight: Radius.circular(0.0),
                       topLeft: Radius.circular(16.0),
@@ -110,14 +106,14 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 12.0, 0.0, 12.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -132,7 +128,7 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 12.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -186,13 +182,13 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                           ],
                         ),
                       ),
-                      Divider(
+                      const Divider(
                         height: 4.0,
                         thickness: 1.0,
                         color: Color(0xFFE0E3E7),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 8.0, 16.0, 8.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -210,7 +206,7 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                                   ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 4.0, 0.0, 0.0),
                               child: FlutterFlowChoiceChips(
                                 options: [
@@ -227,14 +223,13 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                                           val?.firstOrNull);
                                   if (_model.choiceChipsStartTimeValue ==
                                       'Scheduled') {
-                                    final _datePickedDate =
-                                        await showDatePicker(
+                                    final datePickedTime =
+                                        await showTimePicker(
                                       context: context,
-                                      initialDate: getCurrentTimestamp,
-                                      firstDate: getCurrentTimestamp,
-                                      lastDate: DateTime(2050),
+                                      initialTime: TimeOfDay.fromDateTime(
+                                          getCurrentTimestamp),
                                       builder: (context, child) {
-                                        return wrapInMaterialDatePickerTheme(
+                                        return wrapInMaterialTimePickerTheme(
                                           context,
                                           child!,
                                           headerBackgroundColor:
@@ -269,13 +264,14 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                                         );
                                       },
                                     );
-
-                                    if (_datePickedDate != null) {
+                                    if (datePickedTime != null) {
                                       safeSetState(() {
                                         _model.datePicked = DateTime(
-                                          _datePickedDate.year,
-                                          _datePickedDate.month,
-                                          _datePickedDate.day,
+                                          getCurrentTimestamp.year,
+                                          getCurrentTimestamp.month,
+                                          getCurrentTimestamp.day,
+                                          datePickedTime.hour,
+                                          datePickedTime.minute,
                                         );
                                       });
                                     }
@@ -296,7 +292,7 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                                       FlutterFlowTheme.of(context).alternate,
                                   iconSize: 10.0,
                                   elevation: 0.0,
-                                  borderColor: Color(0x9DE5E6EA),
+                                  borderColor: const Color(0x9DE5E6EA),
                                   borderWidth: 0.5,
                                   borderRadius: BorderRadius.circular(24.0),
                                 ),
@@ -315,7 +311,7 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                                       .secondaryText,
                                   iconSize: 16.0,
                                   elevation: 0.0,
-                                  borderColor: Color(0x86E5E6EA),
+                                  borderColor: const Color(0x86E5E6EA),
                                   borderWidth: 0.5,
                                   borderRadius: BorderRadius.circular(24.0),
                                 ),
@@ -333,7 +329,7 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                             ),
                             if (_model.choiceChipsStartTimeValue == 'Scheduled')
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 6.0, 0.0, 0.0),
                                 child: RichText(
                                   textScaler: MediaQuery.of(context).textScaler,
@@ -374,7 +370,7 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                                 ),
                               ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 8.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -389,7 +385,7 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 4.0, 0.0, 0.0),
                               child: FlutterFlowChoiceChips(
                                 options: [
@@ -420,7 +416,7 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                                   iconColor: FlutterFlowTheme.of(context).info,
                                   iconSize: 10.0,
                                   elevation: 0.0,
-                                  borderColor: Color(0x86E5E6EA),
+                                  borderColor: const Color(0x86E5E6EA),
                                   borderWidth: 0.5,
                                   borderRadius: BorderRadius.circular(24.0),
                                 ),
@@ -439,7 +435,7 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                                       .secondaryText,
                                   iconSize: 16.0,
                                   elevation: 0.0,
-                                  borderColor: Color(0x8BE1F6F8),
+                                  borderColor: const Color(0x8BE1F6F8),
                                   borderRadius: BorderRadius.circular(24.0),
                                 ),
                                 chipSpacing: 4.0,
@@ -455,7 +451,7 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 8.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -470,7 +466,7 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 4.0, 0.0, 0.0),
                               child: FlutterFlowChoiceChips(
                                 options: [
@@ -505,7 +501,7 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                                       FlutterFlowTheme.of(context).secondary,
                                   iconSize: 16.0,
                                   elevation: 0.0,
-                                  borderColor: Color(0x86E5E6EA),
+                                  borderColor: const Color(0x86E5E6EA),
                                   borderWidth: 0.5,
                                   borderRadius: BorderRadius.circular(24.0),
                                 ),
@@ -524,7 +520,7 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                                       .secondaryText,
                                   iconSize: 16.0,
                                   elevation: 0.0,
-                                  borderColor: Color(0x86E5E6EA),
+                                  borderColor: const Color(0x86E5E6EA),
                                   borderWidth: 0.5,
                                   borderRadius: BorderRadius.circular(24.0),
                                 ),
@@ -549,15 +545,15 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                           ],
                         ),
                       ),
-                      Divider(
+                      const Divider(
                         height: 4.0,
                         thickness: 1.0,
                         color: Color(0xFFE0E3E7),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(1.0, 0.0),
+                        alignment: const AlignmentDirectional(1.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 12.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
@@ -566,7 +562,7 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                               await walkRoomsRecordReference
                                   .set(createWalkRoomsRecordData(
                                 roomName:
-                                    '${_model.choiceChipsWalkTypeValue} - ${_model.choiceChipsTimeLimitValue} - ${currentUserDisplayName}',
+                                    '${_model.choiceChipsWalkTypeValue} - ${_model.choiceChipsTimeLimitValue} - $currentUserDisplayName',
                                 description: ' ',
                                 createdBy: currentUserReference,
                                 startDate: _model.datePicked,
@@ -574,12 +570,14 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                                     ? PrivacyType.Public
                                     : PrivacyType.Private,
                                 expired: false,
+                                endDate: functions.addTime(_model.datePicked!,
+                                    _model.choiceChipsTimeLimitValue!),
                               ));
                               _model.walkroom =
                                   WalkRoomsRecord.getDocumentFromData(
                                       createWalkRoomsRecordData(
                                         roomName:
-                                            '${_model.choiceChipsWalkTypeValue} - ${_model.choiceChipsTimeLimitValue} - ${currentUserDisplayName}',
+                                            '${_model.choiceChipsWalkTypeValue} - ${_model.choiceChipsTimeLimitValue} - $currentUserDisplayName',
                                         description: ' ',
                                         createdBy: currentUserReference,
                                         startDate: _model.datePicked,
@@ -587,8 +585,29 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                                             ? PrivacyType.Public
                                             : PrivacyType.Private,
                                         expired: false,
+                                        endDate: functions.addTime(
+                                            _model.datePicked!,
+                                            _model.choiceChipsTimeLimitValue!),
                                       ),
                                       walkRoomsRecordReference);
+
+                              await UserBasedStepCountRecord.createDoc(
+                                      _model.walkroom!.reference)
+                                  .set(createUserBasedStepCountRecordData());
+                              Navigator.pop(context);
+
+                              context.pushNamed(
+                                'CreateWalkRoomScreen',
+                                queryParameters: {
+                                  'walkRoom': serializeParam(
+                                    _model.walkroom,
+                                    ParamType.Document,
+                                  ),
+                                }.withoutNulls,
+                                extra: <String, dynamic>{
+                                  'walkRoom': _model.walkroom,
+                                },
+                              );
 
                               safeSetState(() {});
                             },
@@ -597,9 +616,9 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                             ),
                             options: FFButtonOptions(
                               height: 40.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   36.0, 2.0, 36.0, 2.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -612,7 +631,7 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 0.5,
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 width: 0.0,
                               ),
                               borderRadius: BorderRadius.circular(6.0),
@@ -620,7 +639,7 @@ class _CreateWalkRoomWidgetState extends State<CreateWalkRoomWidget> {
                           ),
                         ),
                       ),
-                    ].addToEnd(SizedBox(height: 12.0)),
+                    ].addToEnd(const SizedBox(height: 12.0)),
                   ),
                 ),
               ),

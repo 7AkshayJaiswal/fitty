@@ -1,17 +1,20 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/global_component/background_card/background_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'create_walk_room_screen_model.dart';
 export 'create_walk_room_screen_model.dart';
 
 class CreateWalkRoomScreenWidget extends StatefulWidget {
-  const CreateWalkRoomScreenWidget({super.key});
+  const CreateWalkRoomScreenWidget({
+    super.key,
+    required this.walkRoom,
+  });
+
+  final WalkRoomsRecord? walkRoom;
 
   @override
   State<CreateWalkRoomScreenWidget> createState() =>
@@ -74,7 +77,7 @@ class _CreateWalkRoomScreenWidgetState
                         letterSpacing: 0.0,
                       ),
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: false,
                 elevation: 0.0,
               )
@@ -84,7 +87,7 @@ class _CreateWalkRoomScreenWidgetState
             wrapWithModel(
               model: _model.backgroundCardModel,
               updateCallback: () => safeSetState(() {}),
-              child: BackgroundCardWidget(),
+              child: const BackgroundCardWidget(),
             ),
           ],
         ),

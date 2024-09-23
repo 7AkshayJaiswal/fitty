@@ -43,3 +43,21 @@ DocumentReference findOppositUser(
     return friend.user1ID!;
   }
 }
+
+DateTime addTime(
+  DateTime startTime,
+  String timeToAdd,
+) {
+  switch (timeToAdd) {
+    case '15 Min':
+      return startTime.add(Duration(minutes: 15));
+    case '30 Min':
+      return startTime.add(Duration(minutes: 30));
+    case '45 Min':
+      return startTime.add(Duration(minutes: 45));
+    case '1 Hour':
+      return startTime.add(Duration(minutes: 60));
+    default:
+      return startTime; // No time added if none of the cases match
+  }
+}

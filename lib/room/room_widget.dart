@@ -1,15 +1,12 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'room_model.dart';
 export 'room_model.dart';
 
@@ -67,8 +64,8 @@ class _RoomWidgetState extends State<RoomWidget> {
                 flex: 7,
                 child: Container(
                   height: double.infinity,
-                  decoration: BoxDecoration(),
-                  child: FlutterFlowVideoPlayer(
+                  decoration: const BoxDecoration(),
+                  child: const FlutterFlowVideoPlayer(
                     path:
                         'https://assets.mixkit.co/videos/preview/mixkit-forest-stream-in-the-sunlight-529-large.mp4',
                     videoType: VideoType.network,
@@ -95,15 +92,15 @@ class _RoomWidgetState extends State<RoomWidget> {
                         sigmaY: 2.0,
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(24.0),
+                        padding: const EdgeInsets.all(24.0),
                         child: Container(
                           width: 100.0,
                           height: 100.0,
                           decoration: BoxDecoration(
-                            color: Color(0x54E1F6F8),
+                            color: const Color(0x54E1F6F8),
                             borderRadius: BorderRadius.circular(18.0),
                           ),
-                          child: Container(
+                          child: SizedBox(
                             width: double.infinity,
                             height: double.infinity,
                             child: custom_widgets.CallPanelZego(
@@ -119,7 +116,7 @@ class _RoomWidgetState extends State<RoomWidget> {
                                 false,
                                 false,
                               ),
-                              roomID: widget!.roomId!,
+                              roomID: widget.roomId!,
                             ),
                           ),
                         ),

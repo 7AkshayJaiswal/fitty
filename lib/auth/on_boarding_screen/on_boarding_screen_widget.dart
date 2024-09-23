@@ -2,17 +2,12 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/global_component/background_card/background_card_widget.dart';
-import 'dart:math';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'on_boarding_screen_model.dart';
 export 'on_boarding_screen_model.dart';
 
@@ -51,8 +46,8 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(1.2, 1.2),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(1.2, 1.2),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -70,8 +65,8 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 60.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 60.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -89,8 +84,8 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 80.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 80.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -108,8 +103,8 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.4, 0.4),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.4, 0.4),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -127,8 +122,8 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(1.2, 1.2),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(1.2, 1.2),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -146,8 +141,8 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 60.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 60.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -165,8 +160,8 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 80.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 80.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -184,8 +179,8 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.5, 0.5),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.5, 0.5),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -203,8 +198,8 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(1.2, 1.2),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(1.2, 1.2),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -222,8 +217,8 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 60.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 60.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -241,8 +236,8 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 80.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 80.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -260,8 +255,8 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.5, 0.5),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.5, 0.5),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -295,18 +290,18 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
             wrapWithModel(
               model: _model.backgroundCardModel,
               updateCallback: () => safeSetState(() {}),
-              child: BackgroundCardWidget(),
+              child: const BackgroundCardWidget(),
             ),
             Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 AnimatedContainer(
-                  duration: Duration(milliseconds: 300),
+                  duration: const Duration(milliseconds: 300),
                   curve: Curves.easeInOut,
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                   child: Padding(
-                    padding: EdgeInsets.all(24.0),
+                    padding: const EdgeInsets.all(24.0),
                     child: Text(
                       () {
                         if (_model.pageViewCurrentIndex == 0) {
@@ -328,7 +323,7 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
                   ),
                 ),
                 AnimatedContainer(
-                  duration: Duration(milliseconds: 300),
+                  duration: const Duration(milliseconds: 300),
                   curve: Curves.easeInOut,
                   width: () {
                     if (_model.pageViewCurrentIndex == 0) {
@@ -347,7 +342,7 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
                   ),
                 ),
                 Expanded(
-                  child: Container(
+                  child: SizedBox(
                     width: double.infinity,
                     height: 700.0,
                     child: Stack(
@@ -372,7 +367,7 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
                                       'imageOnPageLoadAnimation1']!),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.all(24.0),
+                                  padding: const EdgeInsets.all(24.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     crossAxisAlignment:
@@ -391,7 +386,7 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
                                       ).animateOnPageLoad(animationsMap[
                                           'textOnPageLoadAnimation1']!),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -407,7 +402,7 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
                                             'textOnPageLoadAnimation2']!),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 24.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -429,7 +424,7 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
                                               onPressed: () async {
                                                 await _model.pageViewController
                                                     ?.nextPage(
-                                                  duration: Duration(
+                                                  duration: const Duration(
                                                       milliseconds: 300),
                                                   curve: Curves.ease,
                                                 );
@@ -458,7 +453,7 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
                                       'imageOnPageLoadAnimation2']!),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.all(24.0),
+                                  padding: const EdgeInsets.all(24.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     crossAxisAlignment:
@@ -477,7 +472,7 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
                                       ).animateOnPageLoad(animationsMap[
                                           'textOnPageLoadAnimation3']!),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -493,7 +488,7 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
                                             'textOnPageLoadAnimation4']!),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 24.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -515,7 +510,7 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
                                               onPressed: () async {
                                                 await _model.pageViewController
                                                     ?.nextPage(
-                                                  duration: Duration(
+                                                  duration: const Duration(
                                                       milliseconds: 300),
                                                   curve: Curves.ease,
                                                 );
@@ -544,7 +539,7 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
                                       'imageOnPageLoadAnimation3']!),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.all(24.0),
+                                  padding: const EdgeInsets.all(24.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     crossAxisAlignment:
@@ -563,7 +558,7 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
                                       ).animateOnPageLoad(animationsMap[
                                           'textOnPageLoadAnimation5']!),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -579,7 +574,7 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
                                             'textOnPageLoadAnimation6']!),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 24.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -614,9 +609,9 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
                           ],
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-0.85, 0.85),
+                          alignment: const AlignmentDirectional(-0.85, 0.85),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 10.0),
                             child: smooth_page_indicator.SmoothPageIndicator(
                               controller: _model.pageViewController ??=
@@ -626,7 +621,7 @@ class _OnBoardingScreenWidgetState extends State<OnBoardingScreenWidget>
                               onDotClicked: (i) async {
                                 await _model.pageViewController!.animateToPage(
                                   i,
-                                  duration: Duration(milliseconds: 500),
+                                  duration: const Duration(milliseconds: 500),
                                   curve: Curves.ease,
                                 );
                                 safeSetState(() {});
